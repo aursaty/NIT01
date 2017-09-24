@@ -280,14 +280,14 @@
     bottom: -130px;
     left: 20px;
     right: 0px;
-    /*margin: auto;*/
+    /*margin: 10;*/
     padding: 5px;
 
     width: 130px;
     height: 180px;
 
     color: white;
-    background: deeppink;
+    background: blueviolet;
 
     text-align:center;
 
@@ -301,14 +301,22 @@
 }
 
 .badge:hover {
-    transform: translateY(-130px);
+    transform: translateY(-100px);
     /*bottom: 0px;*/
     background: blue;
 }
 
 .badge .created {
+    padding-left: 10px;
+    text-align: left;
     margin-top: 25px;
-    font-size: 20px;
+    font-size: 12px;
+}
+
+.badge .by-me {
+    padding-left: 10px;
+    text-align: left;
+    font-size: 17px;
 }
 
 .mac-fix {
@@ -320,18 +328,25 @@
 
     bottom: -200px;
 
-    background: deeppink;
+    background: blueviolet;
 }
 
 @media print {
     .badge .title {
         display: none;
         color: black;
-        border: 3px solid;
     }
+    .badge .created {
+        margin-top: 0px;
+    }
+    .badge {
+
+        border: 3px solid blueviolet;
+    }
+
 }
 
-@media (max-width: 750px){
+@media (max-width: 600px){
     .bl-search-list {
         width: 100%;
     }
