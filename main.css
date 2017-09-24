@@ -1,6 +1,6 @@
 .body {
     box-sizing: border-box;
-    margin-top: 100px;
+    margin-top: 80px;
     background-color: #DADADA;
     height: 100%;
     min-width: 320px;
@@ -14,29 +14,38 @@
 }
 
 .container {
+    min-width: 500px;
     border-radius: 5px;
     box-sizing: border-box;
     display: inline;
     padding-top: 80px;
-    max-width: 700px;
+    max-width: 500px;
     width: 100%;
 }
 
 .bl-search-list {
-    padding-left: 40px;
-    min-width: 700px;
+    float: left;
+    padding: 20px;
+    /*min-width: 500px;*/
     width: 68.125%;
-    background: #cdcbcb;
-    box-sizing: inherit;
+    box-sizing: border-box;
 }
 
 .bl-list {
-    margin-right: 3%;
+    float: left;
+    margin-right: 0%;
     border-radius: 5px;
     display: inline-block;
-    box-sizing: inherit;
-    float: left;
+    box-sizing: border-box;
     background: white;
+    background-color: white;
+}
+
+.bl-cont-bought {
+    float: left;
+    padding: 20px;
+    width: 31.825%;
+    box-sizing: border-box;
 }
 
 .bl-search {
@@ -61,11 +70,11 @@
 }
 
 .bl-bought {
+    width: 100%;
     border-radius: .28571429rem;
     box-sizing: border-box;
     display: inline-block;
     float: left;
-    width: 28.875%;
     background: white;
 }
 
@@ -100,7 +109,8 @@
 }
 
 .field-product {
-    border-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-bottomleft: 5px;
     flex: 1 0 auto;
     width: auto;
     border: 1px solid rgba(34, 36, 38, .15);
@@ -110,7 +120,9 @@
 }
 
 .button-add {
-    border-radius: 5px;
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
     font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 16px;
@@ -130,7 +142,7 @@
 
 .bl-segment-lost-elems {
     padding-left: 20px;
-    padding: 1em;
+    padding: 7px;
     border-top: 1px solid rgba(34,36,38,.15);
 }
 
@@ -189,12 +201,12 @@
     line-height: 1em;
     box-shadow: none;
     border: none;
-    opacity: 0.45 !important;
+    /*opacity: 0.45;*/
     box-sizing: inherit;
     font-size: .71428571rem;
     font-weight: 900;
     border-radius: 10em;
-    background-color: #DB2828;
+    background-color: #fa969b;
     color: #FFF;
 }
 
@@ -231,6 +243,7 @@
 }
 
 .elem-1 {
+    margin: 3px;
     line-height: 1em;
     display: inline-block;
     border-radius: .28571429rem;
@@ -260,4 +273,98 @@
 .h3 {
     padding: 0;
     margin: 0;
+}
+
+.badge {
+    position: fixed;
+    bottom: -130px;
+    left: 20px;
+    right: 0px;
+    /*margin: auto;*/
+    padding: 5px;
+
+    width: 130px;
+    height: 180px;
+
+    color: white;
+    background: deeppink;
+
+    text-align:center;
+
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    font-size: 30px;
+    font-family: Tahoma;
+
+    transition: all 1s ease, bottom 3s ease;
+}
+
+.badge:hover {
+    transform: translateY(-130px);
+    /*bottom: 0px;*/
+    background: blue;
+}
+
+.badge .created {
+    margin-top: 25px;
+    font-size: 20px;
+}
+
+.mac-fix {
+    width: 100%;
+    height: 200px;
+
+    position: fixed;
+    left: 0px;
+
+    bottom: -200px;
+
+    background: deeppink;
+}
+
+@media print {
+    .badge .title {
+        display: none;
+        color: black;
+        border: 3px solid;
+    }
+}
+
+@media (max-width: 750px){
+    .bl-search-list {
+        width: 100%;
+    }
+    .bl-list {
+        width: 100%;
+    }
+    .bl-cont-bought {
+        width: 100%;
+    }
+    .bl-bought {
+        width: 100%;
+    }
+}
+
+button:hover::after {
+    content: "TT: " attr(data-tooltip);
+
+    position: absolute;
+    height: 30px;
+    width: 100px;
+
+    margin: auto;
+    left: 50%;
+    margin-left: -50px;
+    top: -35px;
+
+    border-radius: 10px ;
+    color: white;
+
+    background: green;
+    opacity: 1.0;
+}
+
+button {
+    position: relative;
 }
