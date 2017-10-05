@@ -8,79 +8,13 @@
     <link rel="stylesheet" type="text/css" href="main.css"/>
 </head>
 <body class="body">
-<div class="bl-background">
-    <div class="container">
+<div class="container">
+    <div class="bl-background">
         <div class="bl-search-list">
             <div class="bl-list">
                 <div class="bl-search">
                     <input class="field-product" type="text" placeholder="Enter your product">
                     <input class="button-add" type="button" value="Add">
-                </div>
-                <div class="bl-row">
-                    <div class="bl-product">
-                        Помідори
-                    </div>
-                    <div class="bl-count">
-                        <button data-tooltip="Hi I am tooltip" class="bl-minus">
-                            <i class="icon-minus">-</i>
-                        </button>
-                        <span class="bl-label">3</span>
-                        <button class="bl-plus">
-                            <i class="icon-plus">+</i>
-                        </button>
-                    </div>
-                    <div class="bl-buttons">
-                        <button class="nobuy-button">Куплено</button>
-                        <button class="nobuy-icon">
-                            <i class="remove-icon">
-                                X
-                            </i>
-                        </button>
-                    </div>
-                </div>
-                <div class="bl-row">
-                    <div class="bl-product">
-                        Яблука
-                    </div>
-                    <div class="bl-count">
-                        <button class="bl-minus">
-                            <i class="icon-minus">-</i>
-                        </button>
-                        <span class="bl-label">3</span>
-                        <button class="bl-plus">
-                            <i class="icon-plus">+</i>
-                        </button>
-                    </div>
-                    <div class="bl-buttons">
-                        <button class="nobuy-button">Куплено</button>
-                        <button class="nobuy-icon">
-                            <i class="remove-icon">
-                                X
-                            </i>
-                        </button>
-                    </div>
-                </div>
-                <div class="bl-row">
-                    <div class="bl-product">
-                        Груші
-                    </div>
-                    <div class="bl-count">
-                        <button class="bl-minus">
-                            <i class="icon-minus">-</i>
-                        </button>
-                        <span class="bl-label">3</span>
-                        <button class="bl-plus">
-                            <i class="icon-plus">+</i>
-                        </button>
-                    </div>
-                    <div class="bl-buttons">
-                        <button class="nobuy-button">Куплено</button>
-                        <button class="nobuy-icon">
-                            <i class="remove-icon">
-                                X
-                            </i>
-                        </button>
-                    </div>
                 </div>
             </div>
         </div>
@@ -91,29 +25,11 @@
                         Залишилося
                     </h3>
                 </div>
-                <div class="bl-segment-lost-elems">
-                    <span class="elem-1">
-                        <span class="elem-1-title">Помідори</span>
-                        <span class="elem-1-icon">3</span>
-                    </span>
-                    <span class="elem-1">
-                        <span class="elem-1-title">Груші</span>
-                        <span class="elem-1-icon">3</span>
-                    </span>
-                    <span class="elem-1">
-                        <span class="elem-1-title">Яблука</span>
-                        <span class="elem-1-icon">3</span>
-                    </span>
-                </div>
+                <div class="bl-segment-lost-elems"></div>
                 <div class="bl-segment-here">
                     <h3>Купленe</h3>
                 </div>
-                <div class="bl-segment-here-elems">
-                    <span class="elem-1">
-                        <span class="elem-1-title">Банани</span>
-                        <span class="elem-1-icon">1</span>
-                    </span>
-                </div>
+                <div class="bl-segment-here-elems"></div>
             </div>
         </div>
     </div>
@@ -123,7 +39,41 @@
         <div class="by-me">Alexander Ursaty</div>
     </div>
     <div class="mac-fix"></div>
+    <div class="one-row-tmp" style="display: none">
+        <div class="bl-row">
+            <div class="bl-product">
+                Груші
+            </div>
+            <input class="product-rename" style="display: none">
+            <div class="bl-count">
+                <button data-tooltip="Click here to reduce" class="bl-minus">
+                    <i class="icon-minus">-</i>
+                </button>
+                <span class="bl-label">1</span>
+                <button data-tooltip="Click here to increase" class="bl-plus">
+                    <i class="icon-plus">+</i>
+                </button>
+            </div>
+            <div class="bl-buttons">
+                <button data-tooltip="Click here to change status" class="nobuy-button">Куплено</button>
+                <button data-tooltip="Click here to change status" class="buy-button">Не куплено</button>
+                <button data-tooltip="Click here to delete item" class="remove-button">
+                    <i class="remove-icon">
+                        X
+                    </i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="one-elem-tmp" style="display: none">
+        <span class="elem">
+            <span class="elem-title">Банани</span>
+            <span class="elem-icon">1</span>
+        </span>
+    </div>
 </div>
-
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="main.js"></script>
 </body>
 </html>
