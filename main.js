@@ -16,7 +16,7 @@ $(function () {
         var $quantity_label = $(".elem-icon").html();
 
         $node.find(".bl-product").click(function () {
-            $node.find(".product-rename").val(title);//($node.find(".bl-product").val());
+            $node.find(".product-rename").val(title);
             $node.find(".bl-product").hide();
             $node.find(".product-rename").show();
             $node.find(".product-rename").focus();
@@ -31,57 +31,64 @@ $(function () {
         });
 
         $node.find(".bl-plus").click(function () {
-            if (quantity == 1) {
-                $node.find(".bl-minus").fadeTo(1, 0)
-                $node.find(".bl-minus").fadeTo(50, 1)
-                $node.find(".bl-minus").css("background", "red");
-            }
-            quantity += 1;
-            $node.find(".bl-label").fadeTo(1, 0);
-            $node.find(".bl-label").fadeTo("very slow", 1);
-            $rowB.find(".elem-icon").text(quantity);
-            $node.find(".bl-label").text(quantity);
+            $node.find(".bl-label").finish();
+            $node.find(".bl-label").fadeOut("fast", function () {
+                if (quantity == 1) {
+                    $node.find(".bl-minus").fadeOut("fast");
+                    $node.find(".bl-minus").fadeIn("fast");
+                    $node.find(".bl-minus").css("background", "red");
+                }
+                quantity += 1;
+                $node.find(".bl-label").fadeIn("fast");
+                $rowB.find(".elem-icon").text(quantity);
+                $node.find(".bl-label").text(quantity);
+            });
         });
 
 
         $node.find(".bl-minus").click(function () {
-            if (quantity > 1) {
-                quantity -= 1;
-                if (quantity == 1) {
-                    $node.find(".bl-minus").fadeTo(1, 0)
-                    $node.find(".bl-minus").fadeTo(50, 1)
-                    $node.find(".bl-minus").css("background", "#FA969B");
+            $node.find(".bl-label").finish();
+            $node.find(".bl-label").fadeOut("fast", function () {
+                if (quantity > 1) {
+                    quantity -= 1;
+                    if (quantity == 1) {
+                        $node.find(".bl-minus").css("background", "#FA969B");
+                    }
                 }
-            }
-            $node.find(".bl-label").fadeTo(1, 0);
-            $node.find(".bl-label").fadeTo("very slow", 1);
-            $rowB.find(".elem-icon").text(quantity);
-            $node.find(".bl-label").text(quantity);
+                $node.find(".bl-label").fadeIn("fast");
+                $rowB.find(".elem-icon").text(quantity);
+                $node.find(".bl-label").text(quantity);
+
+            });
         });
         $list.append($node);
         $segmentLost.append($rowB)
 
         $node.find(".buy-button").click(function () {
-            $node.fadeTo("very slow", 0);
-            $segmentLost.append($rowB);
-            $node.find(".bl-minus").show();
-            $node.find(".bl-plus").show();
-            $node.find(".buy-button").hide();
-            $node.find(".nobuy-button").show();
-            $node.fadeTo("very slow", 1);
+            $node.fadeOut("slow", function () {
+                $node.find(".bl-product").css("text-decoration", "none");
+                $rowB.find(".elem-title").css("text-decoration", "none");
+                $rowB.find(".elem-icon").css("text-decoration", "none");
+                $segmentLost.append($rowB);
+                $node.find(".bl-minus").css("visibility", "visible");
+                $node.find(".bl-plus").css("visibility", "visible");
+                $node.find(".buy-button").hide();
+                $node.find(".nobuy-button").show();
+                $node.fadeIn("slow");
+            });
         });
         $node.find(".nobuy-button").click(function () {
-            $node.fadeTo("slow", 0);
-            $node.find(".bl-product").css("text-decoration", "line-through");
-            // $node.find("bl-label").css("margin-bottom", "100px");
-            $rowB.find(".elem-title").css("text-decoration", "line-through");
-            $rowB.find(".elem-icon").css("text-decoration", "line-through");
-            $segmentHere.append($rowB);
-            $node.find(".bl-minus").hide();
-            $node.find(".bl-plus").hide();
-            $node.find(".buy-button").show();
-            $node.find(".nobuy-button").hide();
-            $node.fadeTo("slow", 1);
+            $node.fadeOut("slow", function () {
+                $node.find(".bl-product").css("text-decoration", "line-through");
+                $rowB.find(".elem-title").css("text-decoration", "line-through");
+                $rowB.find(".elem-icon").css("text-decoration", "line-through");
+                $segmentHere.append($rowB);
+                $node.find(".bl-minus").css("visibility", "hidden");
+                $node.find(".bl-plus").css("visibility", "hidden");
+                $node.find(".buy-button").show();
+                $node.find(".nobuy-button").hide();
+                $node.fadeIn("slow");
+            });
         });
 
         $node.find(".remove-button").click(function () {

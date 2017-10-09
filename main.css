@@ -407,7 +407,8 @@
     /*!*scale: 10;*!*/
     /*transform: translateY(50px);*/
     /*content: "TT: " attr(data-tooltip);*/
-    /*transition: all 1s cubic-bezier(0.25, 0.1, 0.25, 1);*/
+    /*transition: all 1s ease;*/
+ /*!*cubic-bezier(0.25, 0.1, 0.25, 1);*!*/
     /*transform: scale(1);*/
     /*position: absolute;*/
     /*!*height: 25px;*!*/
